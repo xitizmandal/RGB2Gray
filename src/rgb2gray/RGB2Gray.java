@@ -10,13 +10,10 @@ package rgb2gray;
  * @author xitiz
  */
 public class RGB2Gray {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        PixelLocation pixelLocation = new PixelLocation();
+    public static void main (String[] args){
+        //PixelLocation pixelLocation = new PixelLocation();
+        //GrayFilterUse grayFilterUse = new GrayFilterUse();
+        //Compare compare = new Compare();
+        Shrink shrink = new Shrink();
     }
-    
 }
