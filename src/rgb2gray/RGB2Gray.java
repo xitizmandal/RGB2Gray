@@ -5,6 +5,8 @@
  */
 package rgb2gray;
 
+import java.util.Scanner;
+
 /**
  *
  * @author xitiz
@@ -14,6 +16,11 @@ public class RGB2Gray {
         //PixelLocation pixelLocation = new PixelLocation();
         //GrayFilterUse grayFilterUse = new GrayFilterUse();
         //Compare compare = new Compare();
-        Shrink shrink = new Shrink();
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Enter name of input image: \t");
+        String input = reader.nextLine();
+        System.out.print("Enter name of output image: \t");
+        String output = reader.nextLine();
+        Shrink shrink = new Shrink(input,output);
     }
 }

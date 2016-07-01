@@ -15,15 +15,26 @@ import javax.imageio.ImageIO;
  */
 public class Shrink {
     private BufferedImage image;
+    private String output;
     
-    public Shrink(){
+    public Shrink(String inputImage,String outputImage){
         BufferedImage outImage;
         try{
-            File input = new File("pics/xitiz.jpg");
+            File input = new File("pics/" + inputImage +".jpg");
             image = ImageIO.read(input);
-            outImage = enlarge(image,4);
+            int height = image.getHeight();
+            int width = image.getWidth();
+            int conversionFactor;
             
-            File output = new File("pics/shrunkXitiz.jpg");
+            if((height/256) >= (width/192)){
+                conversionFactor = (height/256);
+            } else {
+                conversionFactor = (width/192);
+            }
+            
+            outImage = enlarge(image,conversionFactor);
+            
+            File output = new File("pics/shrink/"+ outputImage +".jpg");
             ImageIO.write(outImage, "jpg", output);
             System.out.println("Size converted");
             
