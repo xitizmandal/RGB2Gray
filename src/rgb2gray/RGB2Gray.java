@@ -15,12 +15,12 @@ public class RGB2Gray {
     public static void main (String[] args){
         //PixelLocation pixelLocation = new PixelLocation();
         //GrayFilterUse grayFilterUse = new GrayFilterUse();
-        //Compare compare = new Compare();
         Scanner reader = new Scanner(System.in);
         System.out.print("Enter name of input image: \t");
         String input = reader.nextLine();
         System.out.print("Enter name of output image: \t");
         String output = reader.nextLine();
-        Shrink shrink = new Shrink(input,output);
+//        Shrink shrink = new Shrink(input,output);
+          Compare compare = new Compare(input,output,100,100);
     }
 }
